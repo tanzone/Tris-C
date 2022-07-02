@@ -1,0 +1,9 @@
+PER LA VERSIONE CONTRO LA CPU PER IL MOMENTO CE DA ANDARE A MODIFICARE 
+
+IL CODICE SORGENTE...
+
+NEL FILE 		"SUPPORTO_GIOCO.C" 
+
+NELLA FUNZIONE 		"char Inserimento(char struttura[dim][dim],struct GraficaTris Graf1)"
+
+IMPOSTARLA A 		"1"	

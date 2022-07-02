@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import java.util.ArrayList?>
+
+<AnchorPane fx:id="parent" prefHeight="601.0" prefWidth="993.0" style="-fx-background-color: #3D4956;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MenuController">
+	<children>
+		<MenuBar prefHeight="25.0" prefWidth="993.0" VBox.vgrow="NEVER">
+			<menus>
+				<Menu mnemonicParsing="false" text="GAME">
+					<items>
+						<MenuItem fx:id="PlayerVsPlayerMenu" mnemonicParsing="false" text="1 Vs 1" />
+						<MenuItem fx:id="PlayerVsCpuMenu" mnemonicParsing="false" text="1 Vs CPU" />
+						<SeparatorMenuItem mnemonicParsing="false" />
+						<MenuItem fx:id="LanMenu" mnemonicParsing="false" text="LAN" />
+						<SeparatorMenuItem mnemonicParsing="false" />
+						<MenuItem fx:id="SettingsMenu" mnemonicParsing="false" text="Settings" />
+						<SeparatorMenuItem mnemonicParsing="false" />
+						<MenuItem mnemonicParsing="false" onAction="#exit" text="Quit" />
+					</items>
+				</Menu>
+				<Menu mnemonicParsing="false" />
+				<Menu mnemonicParsing="false" text="Help">
+					<items>
+						<MenuItem mnemonicParsing="false" onAction="#aboutApp" text="About my Application" />
+					</items>
+				</Menu>
+			</menus>
+			<fx:define>
+				<ArrayList fx:id="menuList">
+					<fx:reference source="PlayerVsPlayerMenu" />
+					<fx:reference source="PlayerVsCpuMenu" />
+					<fx:reference source="LanMenu" />
+					<fx:reference source="SettingsMenu" /> 
+				</ArrayList>
+			</fx:define>
+		</MenuBar>
+		<AnchorPane layoutY="20.0" maxHeight="-1.0" maxWidth="-1.0" prefHeight="564.0" prefWidth="993.0">
+			<children>
+				<VBox layoutX="6.0" layoutY="-3.0" prefHeight="571.0" prefWidth="471.0">
+					<children>
+						<AnchorPane prefHeight="575.0" prefWidth="471.0">
+							<children>
+								<Label layoutX="6.0" layoutY="17.0" prefHeight="120.0" prefWidth="459.0" style="-fx-alignment: center;" text="T R I S" textAlignment="RIGHT" textFill="WHITE">
+									<font>
+										<Font name="System Bold Italic" size="82.0" />
+									</font>
+								</Label>
+								<Button fx:id="PlayerVsPlayer" accessibleRole="IMAGE_VIEW" layoutX="13.0" layoutY="157.0" mnemonicParsing="false" onAction="#setAnchor" onMouseEntered="#setBackground" prefHeight="46.0" prefWidth="140.0" style="-fx-background-color: #EDA678; -fx-background-radius: 0em; -fx-border-color: white; -fx-border-radius: 0em;" text="1 vs 1">
+									<font>
+										<Font name="System Bold" size="20.0" />
+									</font>
+								</Button>
+								<Label layoutX="174.0" layoutY="171.0" prefHeight="30.0" prefWidth="288.0" style="-fx-background-color: lightGrey; -fx-border-width: 2; -fx-border-color: #EDA678;" text="  Player vs Player">
+									<font>
+										<Font name="System Bold" size="19.0" />
+									</font>
+									<textFill>
+										<LinearGradient endX="0.6523809523809524" startY="0.2714285714285714">
+											<stops>
+												<Stop color="#dd8046" />
+												<Stop color="#eb8c52" offset="0.6308014377690874" />
+												<Stop color="#868686" offset="1.0" />
+											</stops>
+										</LinearGradient>
+									</textFill>
+								</Label>
+								<Button fx:id="PlayerVsCpu" accessibleRole="IMAGE_VIEW" layoutX="13.0" layoutY="240.0" mnemonicParsing="false" onAction="#setAnchor" onMouseEntered="#setBackground" prefHeight="46.0" prefWidth="140.0" style="-fx-background-color: #EDA678; -fx-background-radius: 0em; -fx-border-color: white; -fx-border-radius: 0em;" text="1 vs CPU">
+									<font>
+										<Font name="System Bold" size="20.0" />
+									</font>
+								</Button>
+								<Label layoutX="174.0" layoutY="254.0" prefHeight="30.0" prefWidth="288.0" style="-fx-background-color: lightGrey; -fx-border-width: 2; -fx-border-color: #EDA678;" text="  Player vs Computer">
+									<font>
+										<Font name="System Bold" size="19.0" />
+									</font>
+									<textFill>
+										<LinearGradient endX="0.6523809523809524" startY="0.2714285714285714">
+											<stops>
+												<Stop color="#dd8046" />
+												<Stop color="#eb8c52" offset="0.6308014377690874" />
+												<Stop color="#868686" offset="1.0" />
+											</stops>
+										</LinearGradient>
+									</textFill>
+								</Label>
+								<Button fx:id="Lan" accessibleRole="IMAGE_VIEW" layoutX="13.0" layoutY="324.0" mnemonicParsing="false" onAction="#setAnchor" onMouseEntered="#setBackground" prefHeight="46.0" prefWidth="140.0" style="-fx-background-color: #EDA678; -fx-background-radius: 0em; -fx-border-color: white; -fx-border-radius: 0em;" text="LAN">
+									<font>
+										<Font name="System Bold" size="20.0" />
+									</font>
+								</Button>
+								<Label layoutX="174.0" layoutY="338.0" prefHeight="30.0" prefWidth="288.0" style="-fx-background-color: lightGrey; -fx-border-width: 2; -fx-border-color: #EDA678;" text="  Player vs Lan">
+									<font>
+										<Font name="System Bold" size="19.0" />
+									</font>
+									<textFill>
+										<LinearGradient endX="0.6523809523809524" startY="0.2714285714285714">
+											<stops>
+												<Stop color="#dd8046" />
+												<Stop color="#eb8c52" offset="0.6308014377690874" />
+												<Stop color="#868686" offset="1.0" />
+											</stops>
+										</LinearGradient>
+									</textFill>
+								</Label>
+								<Button fx:id="Settings" accessibleRole="IMAGE_VIEW" layoutX="13.0" layoutY="409.0" mnemonicParsing="false" onAction="#setAnchor" onMouseEntered="#setBackground" prefHeight="46.0" prefWidth="140.0" style="-fx-background-color: #EDA678; -fx-background-radius: 0em; -fx-border-color: white; -fx-border-radius: 0em;" text="Settings">
+									<font>
+										<Font name="System Bold" size="20.0" />
+									</font>
+								</Button>
+								<Label layoutX="174.0" layoutY="423.0" prefHeight="30.0" prefWidth="288.0" style="-fx-background-color: lightGrey; -fx-border-width: 2; -fx-border-color: #EDA678;" text="  Settings about the game">
+									<font>
+										<Font name="System Bold" size="19.0" />
+									</font>
+									<textFill>
+										<LinearGradient endX="0.6523809523809524" startY="0.2714285714285714">
+											<stops>
+												<Stop color="#dd8046" />
+												<Stop color="#eb8c52" offset="0.6308014377690874" />
+												<Stop color="#868686" offset="1.0" />
+											</stops>
+										</LinearGradient>
+									</textFill>
+								</Label>
+								<Label layoutX="14.0" layoutY="554.0" text="Signed in as : " textFill="WHITE">
+									<font>
+										<Font name="System Bold" size="20.0" />
+									</font>
+								</Label>
+								<Label fx:id="user" layoutX="155.0" layoutY="554.0" prefHeight="30.0" prefWidth="306.0" text="Unknown" textFill="WHITE">
+									<font>
+										<Font name="System Bold" size="20.0" />
+									</font>
+								</Label>
+							</children>
+							<fx:define>
+								<ArrayList fx:id="buttonList">
+									<fx:reference source="PlayerVsPlayer" />
+									<fx:reference source="PlayerVsCpu" />
+									<fx:reference source="Lan" />
+									<fx:reference source="Settings" /> 
+								</ArrayList>
+							</fx:define>
+						</AnchorPane>
+					</children>
+				</VBox>
+				<Separator layoutX="493.0" layoutY="99.0" orientation="VERTICAL" prefHeight="408.0" prefWidth="17.0" />
+				<AnchorPane fx:id="anchorSettings" layoutX="501.0" layoutY="12.0" prefHeight="579.0" prefWidth="481.0" style="visibility: fallse;">
+					<children>
+						<Label layoutX="172.0" layoutY="209.0" text="Your username :" textFill="WHITE">
+							<font>
+								<Font name="System Bold Italic" size="18.0" />
+							</font>
+						</Label>
+						<TextField fx:id="textUser" layoutX="151.0" layoutY="250.0" prefHeight="32.0" prefWidth="180.0" promptText="Unknown">
+							<font>
+								<Font name="System Bold Italic" size="18.0" />
+							</font>
+						</TextField>
+						<Label layoutX="147.0" layoutY="342.0" text="Your IP :" textFill="WHITE">
+							<font>
+								<Font name="System Bold Italic" size="18.0" />
+							</font>
+						</Label>
+						<Label fx:id="labelIp" layoutX="226.0" layoutY="344.0" text="FF-FF-FF-FF-FF-FF" textFill="WHITE">
+							<font>
+								<Font name="System Bold Italic" size="18.0" />
+							</font>
+						</Label>
+                  <Button layoutX="176.0" layoutY="503.0" mnemonicParsing="false" onAction="#confirm" prefHeight="46.0" prefWidth="130.0" style="-fx-background-radius: 3em; -fx-background-color: #EDA678;" text="Confirm">
+                     <font>
+                        <Font name="System Bold Italic" size="18.0" />
+                     </font>
+                  </Button>
+					</children>
+				</AnchorPane>
+				<AnchorPane fx:id="anchorLan" layoutX="500.0" layoutY="12.0" prefHeight="579.0" prefWidth="481.0" style="visibility: false;">
+					<children>
+						<Label layoutX="174.0" layoutY="105.0" text="Name player 1 :" textFill="WHITE">
+							<font>
+								<Font name="System Bold Italic" size="18.0" />
+							</font>
+						</Label>
+						<TextField fx:id="textNameOneLan" layoutX="151.0" layoutY="139.0" prefHeight="32.0" prefWidth="180.0" promptText="Unknown">
+		                     <font>
+		                        <Font name="System Bold Italic" size="18.0" />
+		                     </font>
+                     	</TextField>
+						<Button layoutX="91.0" layoutY="508.0" mnemonicParsing="false" onAction="#startLan" prefHeight="46.0" prefWidth="306.0" style="-fx-background-color: #EDA678;" text="START GAME" textFill="#305f86">
+							<font>
+								<Font name="System Bold" size="18.0" />
+							</font>
+						</Button>
+						<Label layoutX="156.0" layoutY="236.0" text="Ip opponent player :" textFill="WHITE">
+							<font>
+								<Font name="System Bold Italic" size="18.0" />
+							</font>
+						</Label>
+						<TextField fx:id="textIpLan" layoutX="151.0" layoutY="272.0" prefHeight="32.0" prefWidth="180.0" promptText="localhost">
+		                     <font>
+		                        <Font name="System Bold Italic" size="18.0" />
+		                     </font>
+                     	</TextField>
+                  <Label layoutX="156.0" layoutY="362.0" prefHeight="27.0" prefWidth="170.0" style="-fx-alignment: center;" text="Port to open:" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="textPortLan" layoutX="151.0" layoutY="398.0" prefHeight="32.0" prefWidth="180.0" promptText="2222">
+                     <font>
+                        <Font name="System Bold Italic" size="18.0" />
+                     </font>
+                  </TextField>
+                  <Label fx:id="error" layoutX="156.0" layoutY="464.0" prefHeight="27.0" prefWidth="170.0" style="-fx-alignment: center;" text="" textFill="RED">
+                     <font>
+                        <Font name="System Bold Italic" size="18.0" />
+                     </font>
+                  </Label>
+					</children>
+				</AnchorPane>
+				<AnchorPane fx:id="anchorPlayerVsCpu" layoutX="502.0" layoutY="12.0" prefHeight="579.0" prefWidth="481.0" style="visibility: false;">
+					<children>
+						<Label layoutX="173.0" layoutY="256.0" text="Name player 1 :" textFill="WHITE">
+							<font>
+								<Font name="System Bold Italic" size="18.0" />
+							</font>
+						</Label>
+						<TextField fx:id="textNameOneCpu" layoutX="151.0" layoutY="292.0" prefHeight="32.0" prefWidth="180.0" promptText="Unknown">
+							<font>
+								<Font name="System Bold Italic" size="18.0" />
+							</font>
+						</TextField>
+						<Button layoutX="89.0" layoutY="510.0" mnemonicParsing="false" onAction="#startCpu" prefHeight="46.0" prefWidth="306.0" style="-fx-background-color: #EDA678;" text="START GAME" textFill="#305f86">
+							<font>
+								<Font name="System Bold" size="18.0" />
+							</font>
+						</Button>
+					</children>
+				</AnchorPane>
+				<AnchorPane fx:id="anchorPlayerVsPlayer" layoutX="500.0" layoutY="12.0" prefHeight="579.0" prefWidth="481.0" style="visibility: false;">
+					<children>
+						<Label layoutX="173.0" layoutY="166.0" prefHeight="27.0" prefWidth="135.0" text="Name player 1 :" textFill="WHITE">
+							<font>
+								<Font name="System Bold Italic" size="18.0" />
+							</font>
+						</Label>
+						<TextField fx:id="textNameOnePlay" layoutX="151.0" layoutY="206.0" prefHeight="39.0" prefWidth="180.0" promptText="Unknown">
+							<font>
+								<Font name="System Bold Italic" size="18.0" />
+							</font>
+						</TextField>
+						<Label layoutX="173.0" layoutY="298.0" prefHeight="27.0" prefWidth="135.0" text="Name player 2 :" textFill="WHITE">
+							<font>
+								<Font name="System Bold Italic" size="18.0" />
+							</font>
+						</Label>
+						<TextField fx:id="textNameTwoPlay" layoutX="151.0" layoutY="338.0" prefHeight="39.0" prefWidth="180.0" promptText="Unknown">
+							<font>
+								<Font name="System Bold Italic" size="18.0" />
+							</font>
+						</TextField>
+						<Button layoutX="91.0" layoutY="509.0" mnemonicParsing="false" onAction="#startVersus" prefHeight="46.0" prefWidth="306.0" style="-fx-background-color: #EDA678;" text="START GAME" textFill="#305f86">
+							<font>
+								<Font name="System Bold" size="18.0" />
+							</font>
+						</Button>
+					</children>
+				</AnchorPane>
+				<AnchorPane fx:id="anchorImages" layoutX="509.0" layoutY="17.0" prefHeight="570.0" prefWidth="484.0" style="visibility: true;">
+					<children>
+						<ImageView fx:id="image" fitHeight="557.0" fitWidth="459.0" layoutX="19.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" />
+					</children>
+				</AnchorPane>
+				<Button layoutX="484.0" layoutY="544.0" mnemonicParsing="false" onAction="#exit" style="-fx-background-color: red;">
+               		<graphic>
+                  		<ImageView fx:id="imageQuit" fitHeight="30.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" />
+            		</graphic>
+          		</Button>
+				<fx:define>
+					<ArrayList fx:id="textFieldList">
+						<fx:reference source="textUser" />
+						<fx:reference source="textNameOneLan" />
+						<fx:reference source="textIpLan" />
+						<fx:reference source="textNameOneCpu" />
+						<fx:reference source="textNameOnePlay" />
+						<fx:reference source="textNameTwoPlay" />
+						<fx:reference source="textPortLan" />   
+					</ArrayList>
+				</fx:define>
+				<fx:define>
+					<ArrayList fx:id="anchorList">
+						<fx:reference source="anchorImages" />
+						<fx:reference source="anchorPlayerVsPlayer" />
+						<fx:reference source="anchorPlayerVsCpu" />
+						<fx:reference source="anchorLan" />
+						<fx:reference source="anchorSettings" />  
+					</ArrayList>
+				</fx:define>
+			</children>
+		</AnchorPane>
+	</children>	
+</AnchorPane>
